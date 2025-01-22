@@ -1,0 +1,15 @@
+{
+    "fallbackUrl": "https://marketplace.rocket.chat",
+    "routes": [
+        {
+            "path": "/v1/bundles/:id/apps",
+            "method": "GET",
+            "status": 500,
+            "body": {
+                "error": "no bundle found by the provided id",
+                "code": 319,
+                "errorId": "error-319"
+            }
+        }
+    ]
+}
