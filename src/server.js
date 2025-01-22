@@ -107,17 +107,17 @@ function main() {
     const app = express();
     
     app.use((req, res) => {
-        config.routes.forEach(route => {
+        for (const route of config.routes) {
             if (route.method === req.method && routeMatch(req.path, route.path)) {
                 console.log(`Matched route ${req.method} ${req.path} with status ${route.status}`);
                 res.status(route.status).send(route.body);
                 return;
             }
+        }
 
-            console.log(`No route found for ${req.method} ${req.path}, falling back to ${fallbackUrl}`);
-            // redirect to the real server
-            res.redirect(fallbackUrl + req.path);
-        });
+        console.log(`No route found for ${req.method} ${req.path}, falling back to ${fallbackUrl}`);
+        // redirect to the real server
+        res.redirect(fallbackUrl + req.path);
     });
 
     const port = process.env.PORT || 3000;

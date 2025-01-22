@@ -7,9 +7,20 @@
             "status": 500,
             "body": {
                 "error": "no bundle found by the provided id",
-                "code": 319,
+                "code": 266,
+                "errorId": "error-319"
+            }
+        },
+        {
+            "path": "/v1/featured-apps",
+            "method": "GET",
+            "status": 500,
+            "body": {
+                "error": "no bundle found by the provided id",
+                "code": 200,
                 "errorId": "error-319"
             }
         }
+ 
     ]
 }
